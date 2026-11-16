@@ -1,0 +1,32 @@
+{
+  "id": "/pruvy-app/mondo/",
+  "name": "Mondo PRUVY",
+  "short_name": "Mondo PRUVY",
+  "description": "Clienti, agenda e cose da fare di PRUVY.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071233",
+  "theme_color": "#071233",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "../icons/mondo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/mondo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/mondo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

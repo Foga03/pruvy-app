@@ -1,0 +1,32 @@
+{
+  "id": "/pruvy-app/calendari/simone/",
+  "name": "Calendari PRUVY",
+  "short_name": "Calendari",
+  "description": "I calendari editoriali dei clienti PRUVY.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F2F6FF",
+  "theme_color": "#F2F6FF",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "../../icons/calendari-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../../icons/calendari-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../../icons/calendari-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calendari PRUVY</title>
+<meta name="description" content="I calendari editoriali dei clienti PRUVY.">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Calendari">
+<meta name="application-name" content="Calendari">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F2F6FF">
+<link rel="apple-touch-icon" href="../icons/calendari-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/calendari-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<script>
+  (function () {
+    var mm = function (q) { return !!(window.matchMedia && matchMedia(q).matches); };
+    if (navigator.standalone === true || mm('(display-mode: standalone)') || mm('(display-mode: fullscreen)') || mm('(display-mode: minimal-ui)'))
+      document.documentElement.className = 'launch';
+  })();
+</script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #0A1433;
+    background: radial-gradient(120% 70% at 85% 0%, #DCE8FF 0%, #F2F6FF 60%) fixed, #F2F6FF;
+    -webkit-font-smoothing: antialiased;
+  }
+  .ico { display: block; border-radius: 22.5%; box-shadow: 0 14px 40px rgba(10, 31, 102, .22), 0 0 0 1px rgba(10,31,102,.10); }
+
+  /* pagina da aggiungere alla Home */
+  main { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: max(28px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom)); }
+  .card { width: 100%; max-width: 420px; }
+  .head { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+  .head .ico { width: 84px; height: 84px; flex: none; }
+  h1 { margin: 0; font-size: 28px; line-height: 1.1; letter-spacing: -.02em; font-weight: 750; }
+  .desc { margin: 6px 0 0; color: #4A5878; font-size: 15px; }
+  .box { background: rgba(255,255,255,.72); border: 1px solid rgba(10,31,102,.10); border-radius: 20px; padding: 20px 20px 18px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+  h2 { margin: 0 0 12px; font-size: 17px; letter-spacing: -.01em; }
+  ol { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+  ol li { counter-increment: s; position: relative; padding: 0 0 12px 38px; }
+  ol li:last-child { padding-bottom: 0; }
+  ol li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; background: #1F4FD1; color: #FFFFFF; }
+  .share { display: inline-block; vertical-align: -3px; width: 17px; height: 17px; }
+  .hint { margin: 14px 0 0; font-size: 14px; color: #4A5878; }
+  .go { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; min-height: 54px; border-radius: 16px; background: #1F4FD1; color: #FFFFFF; font-weight: 700; font-size: 17px; text-decoration: none; }
+  .go:focus-visible, a:focus-visible { outline: 3px solid #1F4FD1; outline-offset: 3px; }
+  .note { margin: 14px 4px 0; font-size: 13px; color: #4A5878; text-align: center; }
+  .only-ios, .only-android, .only-desk { display: none; }
+  .ios .only-ios, .android .only-android, .desk .only-desk { display: block; }
+
+  /* avvio dall'icona */
+  #splash { display: none; position: fixed; inset: 0; z-index: 2; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: #F2F6FF; transition: opacity .35s ease; }
+  #splash .ico { width: 112px; height: 112px; }
+  #splash b { font-size: 17px; letter-spacing: -.01em; }
+  #splash i { width: 22px; height: 22px; border-radius: 50%; border: 2.5px solid rgba(10,31,102,.10); border-top-color: #1F4FD1; animation: g 0.9s linear infinite; }
+  @keyframes g { to { transform: rotate(360deg); } }
+  .launch main { display: none; }
+  .launch #splash { display: flex; }
+  .launch.framed #splash { opacity: 0; pointer-events: none; }
+  iframe { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: #F2F6FF; }
+  @media (prefers-reduced-motion: reduce) { #splash i { animation: none; } #splash { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <div class="head">
+      <img class="ico" src="../icons/calendari-180.png" width="84" height="84" alt="">
+      <div>
+        <h1>Calendari PRUVY</h1>
+        <p class="desc">I calendari editoriali dei clienti PRUVY.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="only-ios">
+        <h2>Mettila nella schermata Home</h2>
+        <ol>
+          <li>Apri questa pagina con Safari.</li>
+          <li>Tocca Condividi <svg class="share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="(il quadrato con la freccia)"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg> in basso.</li>
+          <li>Scegli «Aggiungi alla schermata Home» e poi «Aggiungi».</li>
+        </ol>
+        <p class="hint">Se l’hai aperta da WhatsApp o da Instagram, prima aprila in Safari.</p>
+      </div>
+      <div class="only-android">
+        <h2>Mettila nella schermata Home</h2>
+        <ol>
+          <li>Apri questa pagina con Chrome.</li>
+          <li>Tocca ⋮ in alto a destra.</li>
+          <li>Scegli «Aggiungi a schermata Home» oppure «Installa app».</li>
+        </ol>
+        <p class="hint">Se l’hai aperta da WhatsApp o da Instagram, prima aprila in Chrome.</p>
+      </div>
+      <div class="only-desk">
+        <h2>Per averla sul telefono</h2>
+        <p style="margin:0">Apri questo stesso link dal telefono: lì trovi i passaggi per metterla nella schermata Home. Dal computer puoi aprirla subito.</p>
+      </div>
+      <a class="go" href="https://script.google.com/macros/s/AKfycbyRcNgcdMpIdztnBzjR1R6fj_yFrEjRXpSnhx-3rrZTmYsjty9cErb0lVz6V_A7KupQ/exec">Apri Calendari</a>
+    </div>
+    <p class="note">La prima volta Google ti chiede di accedere: usa l’account Google con cui lavori sui calendari.</p>
+  </div>
+</main>
+
+<div id="splash" aria-live="polite">
+  <img class="ico" src="../icons/calendari-180.png" width="112" height="112" alt="">
+  <b>Calendari PRUVY</b>
+  <i aria-hidden="true"></i>
+</div>
+
+<script>
+(function () {
+  var APP = 'https://script.google.com/macros/s/AKfycbyRcNgcdMpIdztnBzjR1R6fj_yFrEjRXpSnhx-3rrZTmYsjty9cErb0lVz6V_A7KupQ/exec', FRAME = true, KEY = 'pruvy:calendari:diretto';
+  var ua = navigator.userAgent, root = document.documentElement;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function go() { location.replace(APP); }
+
+  if (root.className.indexOf('launch') < 0) { root.className = ios ? 'ios' : android ? 'android' : 'desk'; return; }
+
+  // Aperta dall'icona. Su iPhone Safari blocca l'accesso Google dentro una cornice: l'app si apre direttamente.
+  // Altrove si prova la cornice (niente barre); se l'app non risponde entro 9 secondi si apre direttamente.
+  var t = +get(KEY) || 0;
+  if (!FRAME || ios || Date.now() - t < 7 * 864e5) { setTimeout(go, 200); return; }
+  var ready = false, f = document.createElement('iframe');
+  f.src = APP; f.title = 'Calendari PRUVY';
+  f.setAttribute('allow', 'clipboard-write; screen-wake-lock; fullscreen');
+  addEventListener('message', function (e) {
+    if (!/^https:\/\/([a-z0-9-]+\.)*(googleusercontent\.com|script\.google\.com)$/.test(e.origin)) return;
+    if (e.data && e.data.pruvy === 'ready' && !ready) { ready = true; root.className = 'launch framed'; }
+  });
+  document.body.appendChild(f);
+  setTimeout(function () { if (!ready) { set(KEY, String(Date.now())); go(); } }, 9000);
+})();
+</script>
+<noscript><p style="text-align:center"><a href="https://script.google.com/macros/s/AKfycbyRcNgcdMpIdztnBzjR1R6fj_yFrEjRXpSnhx-3rrZTmYsjty9cErb0lVz6V_A7KupQ/exec">Apri Calendari PRUVY</a></p></noscript>
+</body>
+</html>

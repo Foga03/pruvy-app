@@ -51,6 +51,7 @@
   .hint { margin: 14px 0 0; font-size: 14px; color: #4A5878; }
   .go { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; min-height: 54px; border-radius: 16px; background: #1F4FD1; color: #FFFFFF; font-weight: 700; font-size: 17px; text-decoration: none; }
   .go:focus-visible, a:focus-visible { outline: 3px solid #1F4FD1; outline-offset: 3px; }
+  .ios .go.open { background: transparent; color: #0A1433; border: 1.5px solid rgba(10,31,102,.10); min-height: 48px; font-size: 16px; }
   .note { margin: 14px 4px 0; font-size: 13px; color: #4A5878; text-align: center; }
   .only-ios, .only-android, .only-desk { display: none; }
   .ios .only-ios, .android .only-android, .desk .only-desk { display: block; }
@@ -81,13 +82,14 @@
 
     <div class="box">
       <div class="only-ios">
-        <h2>Mettila nella schermata Home</h2>
+        <h2>Installala sull’iPhone</h2>
         <ol>
-          <li>Apri questa pagina con Safari.</li>
-          <li>Tocca Condividi <svg class="share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="(il quadrato con la freccia)"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg> in basso.</li>
-          <li>Scegli «Aggiungi alla schermata Home» e poi «Aggiungi».</li>
+          <li>Da Safari tocca «Installa l’app» qui sotto, poi «Consenti».</li>
+          <li>Apri Impostazioni: in alto c’è «Profilo scaricato». Toccalo, poi «Installa» e metti il codice del telefono.</li>
+          <li>Sulla Home trovi l’icona Calendari: si apre a tutto schermo, senza la barra di Safari.</li>
         </ol>
-        <p class="hint">Se l’hai aperta da WhatsApp o da Instagram, prima aprila in Safari.</p>
+        <a class="go" href="../profili/calendari.mobileconfig">Installa l’app</a>
+        <p class="hint">L’iPhone segnala il profilo come «non verificato»: è normale, l’abbiamo fatto noi e contiene solo il collegamento e l’icona. Funziona solo da Safari: se hai aperto la pagina da WhatsApp o Instagram, prima aprila in Safari. Se avevi già un’icona aggiunta a mano, toglila.</p>
       </div>
       <div class="only-android">
         <h2>Mettila nella schermata Home</h2>
@@ -102,7 +104,7 @@
         <h2>Per averla sul telefono</h2>
         <p style="margin:0">Apri questo stesso link dal telefono: lì trovi i passaggi per metterla nella schermata Home. Dal computer puoi aprirla subito.</p>
       </div>
-      <a class="go" href="https://script.google.com/macros/s/AKfycbyRcNgcdMpIdztnBzjR1R6fj_yFrEjRXpSnhx-3rrZTmYsjty9cErb0lVz6V_A7KupQ/exec">Apri Calendari</a>
+      <a class="go open" href="https://script.google.com/macros/s/AKfycbyRcNgcdMpIdztnBzjR1R6fj_yFrEjRXpSnhx-3rrZTmYsjty9cErb0lVz6V_A7KupQ/exec">Apri Calendari</a>
     </div>
     <p class="note">La prima volta Google ti chiede di accedere: usa l’account Google con cui lavori sui calendari.</p>
   </div>
